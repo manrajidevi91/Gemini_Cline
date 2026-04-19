@@ -1,7 +1,10 @@
 # API keys and secrets
 .env
+.env.*
 .env~
 **.env
+**.env.*
+*.pem
 .git_backup/
 # gemini-cli settings
 # We want to keep the .gemini in the root of the repo and ignore any .gemini
@@ -21,12 +24,30 @@
 node_modules
 bower_components
 
+# Husky internal
+.husky/_
+
 # Editors
 .idea
 *.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
 # OS metadata
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon\r\r
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
 Thumbs.db
 
 # TypeScript build info files
@@ -43,6 +64,8 @@ bundle
 # Test report files
 junit.xml
 packages/*/coverage/
+coverage/
+.nyc_output/
 
 # Generated files
 packages/cli/src/generated/
@@ -51,12 +74,18 @@ packages/devtools/src/_client-assets.ts
 .integration-tests/
 .perf-tests/
 packages/vscode-ide-companion/*.vsix
+packages/extension/*.vsix
 packages/cli/download-ripgrep*/
 
 # GHA credentials
 gha-creds-*.json
 
 # Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 patch_output.log
 gemini-debug.log
 
@@ -69,3 +98,8 @@ temp_agents/
 
 # conductor extension and planning directories
 conductor/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3

@@ -1,0 +1,65 @@
+{
+  "name": "gemini-cline",
+  "displayName": "Gemini-Cline",
+  "description": "Autonomous coding agent using Gemini CLI backend.",
+  "version": "1.0.0",
+  "publisher": "google-gemini",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gemini-cline-ActivityBar",
+          "title": "Gemini-Cline",
+          "icon": "assets/icons/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "gemini-cline-ActivityBar": [
+        {
+          "type": "webview",
+          "id": "gemini-cline.SidebarProvider",
+          "name": ""
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "gemini-cline.plusButtonClicked",
+        "title": "New Task",
+        "icon": "$(add)"
+      },
+      {
+        "command": "gemini-cline.settingsButtonClicked",
+        "title": "Settings",
+        "icon": "$(settings-gear)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "build": "tsc -p .",
+    "build:dev": "tsc -p .",
+    "compile": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "package": "npm run compile && vsce package",
+    "dev:webview": "cd webview-ui && npm run dev",
+    "build:webview": "cd webview-ui && npm run build"
+  },
+  "dependencies": {
+    "vscode-uri": "^3.1.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "typescript": "^5.8.3"
+  }
+}

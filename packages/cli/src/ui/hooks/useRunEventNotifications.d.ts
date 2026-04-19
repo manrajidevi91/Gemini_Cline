@@ -1,0 +1,42 @@
+/**
+ * @license
+ * Copyright 2026 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+import {
+  StreamingState,
+  type ConfirmationRequest,
+  type HistoryItemWithoutId,
+  type PermissionConfirmationRequest,
+} from '../types.js';
+import { type TerminalNotificationMethod } from '../../utils/terminalNotifications.js';
+interface RunEventNotificationParams {
+  notificationsEnabled: boolean;
+  notificationMethod: TerminalNotificationMethod;
+  isFocused: boolean;
+  hasReceivedFocusEvent: boolean;
+  streamingState: StreamingState;
+  hasPendingActionRequired: boolean;
+  pendingHistoryItems: HistoryItemWithoutId[];
+  commandConfirmationRequest: ConfirmationRequest | null;
+  authConsentRequest: ConfirmationRequest | null;
+  permissionConfirmationRequest: PermissionConfirmationRequest | null;
+  hasConfirmUpdateExtensionRequests: boolean;
+  hasLoopDetectionConfirmationRequest: boolean;
+  terminalName?: string;
+}
+export declare function useRunEventNotifications({
+  notificationsEnabled,
+  notificationMethod,
+  isFocused,
+  hasReceivedFocusEvent,
+  streamingState,
+  hasPendingActionRequired,
+  pendingHistoryItems,
+  commandConfirmationRequest,
+  authConsentRequest,
+  permissionConfirmationRequest,
+  hasConfirmUpdateExtensionRequests,
+  hasLoopDetectionConfirmationRequest,
+}: RunEventNotificationParams): void;
+export {};

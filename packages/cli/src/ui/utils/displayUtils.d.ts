@@ -1,0 +1,36 @@
+/**
+ * @license
+ * Copyright 2026 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+export declare const TOOL_SUCCESS_RATE_HIGH = 95;
+export declare const TOOL_SUCCESS_RATE_MEDIUM = 85;
+export declare const USER_AGREEMENT_RATE_HIGH = 75;
+export declare const USER_AGREEMENT_RATE_MEDIUM = 45;
+export declare const CACHE_EFFICIENCY_HIGH = 40;
+export declare const CACHE_EFFICIENCY_MEDIUM = 15;
+export declare const QUOTA_THRESHOLD_HIGH = 20;
+export declare const QUOTA_THRESHOLD_MEDIUM = 5;
+export declare const QUOTA_USED_WARNING_THRESHOLD = 80;
+export declare const QUOTA_USED_CRITICAL_THRESHOLD = 95;
+export declare const getStatusColor: (
+  value: number,
+  thresholds: {
+    green: number;
+    yellow: number;
+    red?: number;
+  },
+  options?: {
+    defaultColor?: string;
+  },
+) => string;
+/**
+ * Gets the status color based on "used" percentage (where higher is worse).
+ */
+export declare const getUsedStatusColor: (
+  usedPercentage: number,
+  thresholds: {
+    warning: number;
+    critical: number;
+  },
+) => string | undefined;

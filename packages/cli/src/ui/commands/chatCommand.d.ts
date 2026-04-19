@@ -1,0 +1,10 @@
+/**
+ * @license
+ * Copyright 2025 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+import type { SlashCommand } from './types.js';
+export declare const debugCommand: SlashCommand;
+export declare const checkpointSubCommands: SlashCommand[];
+export declare const chatResumeSubCommands: SlashCommand[];
+export declare const chatCommand: SlashCommand;

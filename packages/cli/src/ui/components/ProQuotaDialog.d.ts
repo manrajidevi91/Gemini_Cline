@@ -1,0 +1,30 @@
+/**
+ * @license
+ * Copyright 2025 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+import type React from 'react';
+import { AuthType } from '@google/gemini-cli-core';
+interface ProQuotaDialogProps {
+  failedModel: string;
+  fallbackModel: string;
+  message: string;
+  isTerminalQuotaError: boolean;
+  isModelNotFoundError?: boolean;
+  authType?: AuthType;
+  tierName?: string;
+  onChoice: (
+    choice: 'retry_later' | 'retry_once' | 'retry_always' | 'upgrade',
+  ) => void;
+}
+export declare function ProQuotaDialog({
+  failedModel,
+  fallbackModel,
+  message,
+  isTerminalQuotaError,
+  isModelNotFoundError,
+  authType,
+  tierName,
+  onChoice,
+}: ProQuotaDialogProps): React.JSX.Element;
+export {};

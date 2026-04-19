@@ -1,0 +1,31 @@
+/**
+ * @license
+ * Copyright 2026 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+import type {
+  HistoryItem,
+  HistoryItemWithoutId,
+  IndividualToolCallDisplay,
+} from '../types.js';
+import type { BackgroundTask } from '../hooks/shellReducer.js';
+import type { TrackedToolCall } from '../hooks/useToolScheduler.js';
+/**
+ * Calculates the border color and dimming state for a tool group message.
+ */
+export declare function getToolGroupBorderAppearance(
+  item:
+    | HistoryItem
+    | HistoryItemWithoutId
+    | {
+        type: 'tool_group';
+        tools: Array<IndividualToolCallDisplay | TrackedToolCall>;
+      },
+  activeShellPtyId: number | null | undefined,
+  embeddedShellFocused: boolean | undefined,
+  allPendingItems?: HistoryItemWithoutId[],
+  backgroundTasks?: Map<number, BackgroundTask>,
+): {
+  borderColor: string;
+  borderDimColor: boolean;
+};

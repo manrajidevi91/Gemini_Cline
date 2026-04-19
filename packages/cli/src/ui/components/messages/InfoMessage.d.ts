@@ -1,0 +1,16 @@
+/**
+ * @license
+ * Copyright 2025 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+import type React from 'react';
+interface InfoMessageProps {
+  text: string;
+  secondaryText?: string;
+  source?: string;
+  icon?: string;
+  color?: string;
+  marginBottom?: number;
+}
+export declare const InfoMessage: React.FC<InfoMessageProps>;
+export {};
